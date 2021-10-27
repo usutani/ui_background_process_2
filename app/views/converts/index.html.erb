@@ -1,5 +1,6 @@
 <h1>New Convert</h1>
 <%= form_with(model: @convert) do |form| %>
+  <div id="error_explanation"></div>
   <%= form.label :in_file %>
   <%= form.file_field :in_file %>
   <%= form.submit %>

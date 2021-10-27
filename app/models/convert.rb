@@ -10,6 +10,8 @@ class Convert < ApplicationRecord
     failed: 4
   }
 
+  validates :in_file, presence: true
+
   def status_summary
     "#{id}:#{status}"
   end
