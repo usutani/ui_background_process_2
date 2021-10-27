@@ -7,7 +7,7 @@ class ConvertsController < ApplicationController
   def create
     @convert = Convert.new(convert_params)
     if @convert.save
-      redirect_to converts_url
+      # redirect_to converts_url
     else
       render :create, status: :unprocessable_entity
     end

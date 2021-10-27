@@ -10,6 +10,9 @@ class Convert < ApplicationRecord
     failed: 4
   }
 
+  after_create_commit -> { broadcast_append_later_to :convert }
+  after_update_commit -> { broadcast_replace_later_to :convert }
+
   validates :in_file, presence: true
 
   def status_summary
