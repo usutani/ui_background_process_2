@@ -1,0 +1,8 @@
+<%= tag.li id: dom_id(convert) do %>
+  <%= tag.span convert.status_summary %>
+  <%= tag.span do %>
+    <% out_file_path = rails_blob_path(convert.out_file) if convert.out_file.attached? %>
+    <%= link_to_if(convert.succeeded?, 'Download', out_file_path) { "N/A" } %>
+  <% end %>
+  <%= tag.span convert.message %>
+<% end %>
