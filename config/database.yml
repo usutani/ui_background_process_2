@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: ui_background_process_2_production
-  username: ui_background_process_2
-  password: <%= ENV["UI_BACKGROUND_PROCESS_2_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
